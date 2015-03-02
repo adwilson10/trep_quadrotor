@@ -1,0 +1,8 @@
+<launch>
+        <arg name="joy" default="true" />
+        <param name="robot_description" command="cat $(find trep_quadrotor)/src/dual_quads_lqr.xml" />
+        <node name="quad_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node if="$(arg joy)" pkg="joy" type="joy_node" name="joy_node"/>
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find trep_quadrotor)/launch/2quads.rviz" />
+        <node name="quad_simulator" pkg="trep_quadrotor" type="dual_quads_lqr.py" args="$(arg joy)" />
+</launch>

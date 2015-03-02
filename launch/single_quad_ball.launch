@@ -1,0 +1,7 @@
+<launch>
+        <param name="robot_description" command="cat $(find trep_quadrotor)/src/single_quad_ball.xml" />
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+        <node pkg="joy" type="joy_node" name="joy_node"/>
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find trep_quadrotor)/launch/1quad.rviz" />
+        <node name="quad_simulator" pkg="trep_quadrotor" type="single_quad_ball.py" />
+</launch>

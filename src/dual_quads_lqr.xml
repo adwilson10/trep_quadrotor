@@ -1,0 +1,519 @@
+<robot name="quad">
+
+<link name="ball">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <sphere radius="0.07"/>
+    </geometry>
+    <material name="green">
+      <color rgba="0 .2 0 1" />
+    </material>
+  </visual>
+</link>
+
+<joint name="quad1bry" type="continuous">
+    <axis xyz="0 1 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="ball" />
+    <child link="quad1bryl" />
+</joint>
+
+<link name="quad1bryl">
+</link>
+
+<joint name="quad1brx" type="continuous">
+    <axis xyz="0 0 1" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad1bryl" />
+    <child link="quad1brxl" />
+</joint>
+
+<link name="quad1brxl">
+</link>
+
+<joint name="balltoquad1" type="fixed">
+    <origin xyz="0 0 2" rpy="0 0 0" />
+    <parent link="quad1brxl" />    
+    <child link="balltoquad1l" /> 
+</joint>
+
+
+<link name="balltoquad1l">
+  <visual>
+    <origin xyz="0 0 -1" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.005" length="2" />
+    </geometry>
+    <material name="purple">
+      <color rgba=".3 0 .3 1" />
+    </material>
+  </visual>
+</link>
+
+<joint name="quad1ry" type="continuous">
+    <axis xyz="0 1 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="balltoquad1l" />
+    <child link="quad1ryl" />
+</joint>
+
+<link name="quad1ryl">
+</link>
+
+<joint name="quad1rx" type="continuous">
+    <axis xyz="1 0 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad1ryl" />
+    <child link="quad1rxl" />
+</joint>
+
+<link name="quad1rxl">
+</link>
+
+<joint name="quad1rz" type="continuous">
+    <axis xyz="0 0 1" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad1rxl" />
+    <child link="quad1" />
+</joint>
+
+<link name="quad1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0.785" />
+    <geometry>
+      <box size="0.4 0.4 0.11" />
+    </geometry>
+    <material name="green">
+      <color rgba="0 .2 0 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="link1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="1.8 .1 .1" />
+    </geometry>
+    <material name="blue">
+      <color rgba="0 0 .4 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="link2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="0.1 1.8 .1" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+
+<link name="mot1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple">
+      <color rgba=".3 0 .3 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="mot1a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="mot2a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="mot3a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="mot4a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="mot2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<link name="mot3">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<link name="mot4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<joint name="joint1" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="link1" /> 
+</joint>
+
+<joint name="joint2" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="link2" /> 
+</joint>
+
+<joint name="joint3" type="fixed">
+    <origin xyz="0.9 0 0.05" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="mot1" /> 
+</joint>
+
+<joint name="joint4" type="fixed">
+    <origin xyz="-0.9 0 0.05" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="mot2" /> 
+</joint>
+
+<joint name="joint5" type="fixed">
+    <origin xyz="0 0.9 0.05" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="mot3" /> 
+</joint>
+
+<joint name="joint6" type="fixed">
+    <origin xyz="0 -0.9 0.05" rpy="0 0 0" />
+    <parent link="quad1" />    
+    <child link="mot4" /> 
+</joint>
+
+<joint name="joint1a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="mot1" />    
+    <child link="mot1a" /> 
+</joint>
+
+<joint name="joint2a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="mot2" />    
+    <child link="mot2a" /> 
+</joint>
+
+<joint name="joint3a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="mot3" />    
+    <child link="mot3a" /> 
+</joint>
+
+<joint name="joint4a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="mot4" />    
+    <child link="mot4a" /> 
+</joint>
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<joint name="quad2bry" type="continuous">
+    <axis xyz="0 1 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="ball" />
+    <child link="quad2bryl" />
+</joint>
+
+<link name="quad2bryl">
+</link>
+
+<joint name="quad2brx" type="continuous">
+    <axis xyz="0 0 1" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad2bryl" />
+    <child link="quad2brxl" />
+</joint>
+
+<link name="quad2brxl">
+</link>
+
+<joint name="balltoquad2" type="fixed">
+    <origin xyz="0 0 2" rpy="0 0 0" />
+    <parent link="quad2brxl" />    
+    <child link="balltoquad2l" /> 
+</joint>
+
+
+<link name="balltoquad2l">
+  <visual>
+    <origin xyz="0 0 -1" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.005" length="2" />
+    </geometry>
+    <material name="purple">
+      <color rgba=".3 0 .3 1" />
+    </material>
+  </visual>
+</link>
+
+<joint name="quad2ry" type="continuous">
+    <axis xyz="0 1 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="balltoquad2l" />
+    <child link="quad2ryl" />
+</joint>
+
+<link name="quad2ryl">
+</link>
+
+<joint name="quad2rx" type="continuous">
+    <axis xyz="1 0 0" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad2ryl" />
+    <child link="quad2rxl" />
+</joint>
+
+<link name="quad2rxl">
+</link>
+
+<joint name="quad2rz" type="continuous">
+    <axis xyz="0 0 1" />
+    <origin xyz = "0 0 0" rpy="0 0 0" />
+    <parent link="quad2rxl" />
+    <child link="quad2" />
+</joint>
+
+<link name="quad2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0.785" />
+    <geometry>
+      <box size="0.4 0.4 0.11" />
+    </geometry>
+    <material name="green">
+      <color rgba="0 .2 0 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2link1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="1.8 .1 .1" />
+    </geometry>
+    <material name="blue">
+      <color rgba="0 0 .4 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2link2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <box size="0.1 1.8 .1" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+
+<link name="q2mot1">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple">
+      <color rgba=".3 0 .3 1" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2mot2">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<link name="q2mot3">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<link name="q2mot4">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.1" length="0.2" />
+    </geometry>
+    <material name="purple"/>
+  </visual>
+</link>
+
+<joint name="q2joint1" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2link1" /> 
+</joint>
+
+<joint name="q2joint2" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2link2" /> 
+</joint>
+
+<joint name="q2joint3" type="fixed">
+    <origin xyz="0.9 0 0.05" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2mot1" /> 
+</joint>
+
+<joint name="q2joint4" type="fixed">
+    <origin xyz="-0.9 0 0.05" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2mot2" /> 
+</joint>
+
+<joint name="q2joint5" type="fixed">
+    <origin xyz="0 0.9 0.05" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2mot3" /> 
+</joint>
+
+<joint name="q2joint6" type="fixed">
+    <origin xyz="0 -0.9 0.05" rpy="0 0 0" />
+    <parent link="quad2" />    
+    <child link="q2mot4" /> 
+</joint>
+
+
+<link name="q2mot1a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2mot2a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2mot3a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<link name="q2mot4a">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+      <cylinder radius="0.3" length="0.1" />
+    </geometry>
+    <material name="greent">
+      <color rgba="0 .2 0 0.75" />
+    </material>
+  </visual>
+</link>
+
+<joint name="q2joint1a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="q2mot1" />    
+    <child link="q2mot1a" /> 
+</joint>
+
+<joint name="q2joint2a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="q2mot2" />    
+    <child link="q2mot2a" /> 
+</joint>
+
+<joint name="q2joint3a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="q2mot3" />    
+    <child link="q2mot3a" /> 
+</joint>
+
+<joint name="q2joint4a" type="fixed">
+    <origin xyz="0 0 0.1" rpy="0 0 0" />
+    <parent link="q2mot4" />    
+    <child link="q2mot4a" /> 
+</joint>
+
+</robot>
